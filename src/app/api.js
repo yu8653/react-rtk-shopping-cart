@@ -8,10 +8,7 @@ export async function checkout(items) {
   const modifier = Object.keys(items).length > 0 ? "success" : "error";
   const url = `/checkout-${modifier}.json`;
   await sleep(500);
-  const response = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify(items),
-  });
+  const response = await fetch(url);
   const data = await response.json();
   if (!data.success) {
     throw new Error(data.error);
