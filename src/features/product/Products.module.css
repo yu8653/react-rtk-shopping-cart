@@ -1,10 +1,22 @@
 .products {
     list-style-type: none;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 1em;
     padding: 0;
     margin: 2em;
+  }
+
+  @media screen and (min-width: 768px) {
+    .products {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .products {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   
   .products li {
